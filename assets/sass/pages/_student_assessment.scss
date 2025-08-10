@@ -1,0 +1,28 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+.assessment-form{
+    width: 70%;
+    padding: 2rem;
+    box-shadow: $shadow-lg;
+    background-color: $bg-deep;
+    .field-box{
+        margin-top: 1.5rem;
+        .form-label, .form-control, .form-select, .checkbox-group, .form-check-label{
+            color: $dark;
+            font-size: 1rem;
+        }
+
+        .country-list{
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 2 columns by default (mobile) */
+            gap: 10px; /* space between items */
+            
+            .flag-icon{
+                margin: 0 .5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+.university-card{
+        text-align: left;
+        height: 100%; 
+        background-color: $bg-white;
+        transition: .4s;
+        &:hover{
+            box-shadow: $shadow;
+        }
+        .img-fluid{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        & i{
+            color: $primary;
+        }
+        .location{
+            font-size: .75rem;
+        }
+        .link{
+            margin-top: .75rem;
+        }
+    }

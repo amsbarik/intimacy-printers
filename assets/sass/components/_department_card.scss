@@ -1,0 +1,25 @@
+
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+
+.dep-card{
+    display: flex;
+    align-items: center;
+    height: 100%; 
+    background-color: $bg-deep;
+    padding: .35rem 1rem;
+    border-radius: .3rem;
+    transition: .4s;
+
+    &:hover{
+        background-color: $secondary;
+    }
+    .dep-img{
+        width: 1.7rem;
+        height: 1.7rem;
+        object-fit: cover;
+        margin-right: .3rem;
+    }
+}

@@ -1,0 +1,50 @@
+
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+.university-top{
+    .cover-img{
+        width: 100%;
+        height: 25rem;
+        object-fit: cover;
+    }
+
+    .uv-name-wrap{
+        display: flex;
+        align-items: center;
+        background-color: $bg-light;
+        box-shadow: $shadow-lg;
+        .uv-logo{
+            width: 5rem;
+            height: 5rem;
+            object-fit: cover;
+            box-shadow: $shadow-lg;
+        }
+        .heading{
+            padding: 0 1rem;
+        }
+    }
+}
+
+.uv-information{
+    margin-top: 3rem;
+
+    .uv-rank-wrap{
+        width: 34%;
+        background-color: $bg-light;
+        padding: 1rem;
+        margin-bottom: 2.2rem;
+        .card-text{
+            line-height: 1.3rem;
+        }
+        .card-title{
+            font-size: 1.2rem;
+        }
+    }
+    
+    .uv-info{
+        margin-top: 1rem;
+        i{color: $primary;}
+    }
+}

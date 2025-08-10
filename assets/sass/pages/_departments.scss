@@ -1,0 +1,29 @@
+
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+
+.department-list{
+    padding: 4rem 0;
+    
+    .dep-card{
+        display: block;
+        height: 100%; 
+        background-color: $bg-deep;
+        padding: 1.5rem;
+        border-radius: .3rem;
+        transition: .4s;
+        box-shadow: $shadow-sm;
+
+        &:hover{
+            background-color: $secondary;
+        }
+        .dep-img{
+            width: 2.7rem;
+            height: 2.7rem;
+            object-fit: cover;
+            margin-bottom: 1.2rem;
+        }
+    }
+}

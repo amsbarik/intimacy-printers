@@ -1,0 +1,76 @@
+
+{
+    "emmet.triggerExpansionOnTab": true,
+    "files.associations": {
+        "*html": "html"
+    },
+
+    "emmet.includeLanguages": {
+        "django-html": "html",
+        "jinja-html": "html"
+    },
+
+    "editor.mouseWheelZoom": true,
+    "files.autoSave": "afterDelay",
+
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "path": "C:\\Program Files\\PowerShell\\7.5\\pwsh.exe",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Windows PowerShell": {
+            "path": "C:\\Program Files\\PowerShell\\7.5\\pwsh.exe",
+            "icon": "terminal-powershell"
+        }
+    },
+
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+    "emmet.preferences": {},
+
+    "liveServer.settings.donotShowInfoMsg": true,
+
+    "liveSassCompile.settings.includeItems": [],
+
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "compressed",
+            "extensionName": ".min.css",
+            // "savePath": "/static/css"
+           "savePath": "/assets/css",
+        }
+    ],
+        
+    "liveSassCompile.settings.generateMap": true,
+    
+    "liveSassCompile.settings.autoprefix": [],
+
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*"
+    },
+
+    "html.autoClosingTags": false
+}
+

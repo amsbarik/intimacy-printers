@@ -1,0 +1,33 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+.package-list-card{
+    border: none;
+    box-shadow: $shadow-lg;
+    padding: 1.5rem;
+    transition: .4s;
+
+    border-top: 4px solid $secondary;
+    border-left: 2px solid $white;
+    border-right: 2px solid $white;
+    border-bottom: 2px solid $white;
+    &:hover{
+        border-left: 2px solid $secondary;
+        border-right: 2px solid $secondary;
+        border-bottom: 2px solid $secondary;
+    }
+
+    .duration{
+        font-size: .875rem;
+        color: $dark;
+    }
+    .pkg-list-items{
+        margin: 2rem 0;
+        .card-text{
+            color: $text-color;
+            i{color: $secondary}
+        }
+    }
+
+}

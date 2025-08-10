@@ -1,0 +1,41 @@
+
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+
+.assessment-report{
+    // background-color: $bg-light;
+    .assessment-rep-wrap{
+        width: 70%;
+        .assessment-top{
+            .student-info{
+                .table{
+                    // padding: 1rem;
+                    font-size: 1rem;
+                    th, td{
+                        padding: .5rem 1rem;
+                    }
+                    th{
+                        color: $primary;
+                        font-weight: 500;
+                    }
+                    td{color: $dark;}
+                }
+            }
+        }
+    }
+
+    
+}
+
+// assessment-uv-list
+.assessment-uv-list{
+    background-color: $bg-light;
+    
+    .assessment-uv-list-wrap{
+        padding-bottom: 3rem;
+        
+        width: 70%;
+    }
+}
