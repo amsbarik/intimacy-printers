@@ -11,30 +11,29 @@
         .carousel{
             .slider-img{
                 width: 100%;
-                height: 30rem;
+                height: 36rem;
                 object-fit: cover;
-                border-radius: .4rem;
             }
         }
 
-        .right-cards-wrap{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%; 
-            // gap: 20px; 
-            .card{
-                padding: 1.5rem;
-                transition: .4s;
-                background-color: lighten($color: $secondary, $amount: 24);
-                &:hover{
-                    background-color: $secondary;
-                }
-                .card-img{
-                    width: 4rem;
-                }
-            }
-        }
+        // .right-cards-wrap{
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: space-between;
+        //     height: 100%; 
+        //     // gap: 20px; 
+        //     .card{
+        //         padding: 1.5rem;
+        //         transition: .4s;
+        //         background-color: lighten($color: $secondary, $amount: 24);
+        //         &:hover{
+        //             background-color: $secondary;
+        //         }
+        //         .card-img{
+        //             width: 4rem;
+        //         }
+        //     }
+        // }
     }
 
     
