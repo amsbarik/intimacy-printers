@@ -18,6 +18,68 @@
 
     <title>Home</title>
 
+    <!-- six card sliders css -->
+    <style>
+        .six-card-slider-container {
+            position: relative;
+            width: 80%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .six-card-slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            /* transition: transform 0.5s ease;  for multiple html*/ 
+        }
+
+        .six-card {
+            flex: 0 0 calc(16.66% - 10px); /* Adjust card width minus margin */
+            max-width: calc(16.66% - 10px); /* 100% / 5 = 20% */
+            box-sizing: border-box;
+            margin: 0 8px; /* Adjust margin */
+            height: 200px;
+            background: grey;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .six-card {
+                flex: 0 0 calc(33.3333% - 10px);
+                max-width: calc(33.3333% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .six-card {
+                flex: 0 0 calc(50% - 10px);
+                max-width: calc(50% - 10px);
+            }
+        }
+
+        .six-card-slider-container .prev-btn,
+        .six-card-slider-container .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            font-size: 32px;
+        }
+
+        .six-card-slider-container .prev-btn {
+            left: 0;
+        }
+
+        .six-card-slider-container .next-btn {
+            right: 0;
+        }
+
+    </style>
+
     
 
 </head>
