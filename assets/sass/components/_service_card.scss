@@ -1,0 +1,34 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+
+.service-card{
+    height: 100%;
+    box-shadow: $shadow-lg;
+    transition: .4s;
+    &:hover{
+        box-shadow: none;
+        border: 1px solid $secondary;
+        .card-title{
+            color: $secondary;
+        }
+    }
+    
+    .service-icon{
+        width: 5rem;
+        width: 5rem;
+        object-fit: cover;
+    }
+
+    .card-title{
+        font-size: 1.1rem;
+        margin-top: .5rem;
+        transition: .4s;
+    }
+
+    .link:hover{
+        transition: .4s;
+        i{color: $primary}
+    }
+}

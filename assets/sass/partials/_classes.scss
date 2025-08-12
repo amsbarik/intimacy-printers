@@ -148,11 +148,9 @@
 }
 
 .link{
-    color: $primary;
+    color: $secondary;
     font-size: 0.875rem;
-    &:hover{
-        color: darken($color: $primary, $amount: 10)
-    }
+    &:hover{text-decoration: underline;}
 }
 
 .link-light{

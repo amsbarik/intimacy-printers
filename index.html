@@ -18,67 +18,7 @@
 
     <title>Home</title>
 
-    <!-- six card sliders css -->
-    <style>
-        .six-card-slider-container {
-            position: relative;
-            width: 80%;
-            overflow: hidden;
-            margin: 0 auto;
-        }
-
-        .six-card-slider-wrapper {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            /* transition: transform 0.5s ease;  for multiple html*/ 
-        }
-
-        .six-card {
-            flex: 0 0 calc(16.66% - 10px); /* Adjust card width minus margin */
-            max-width: calc(16.66% - 10px); /* 100% / 5 = 20% */
-            box-sizing: border-box;
-            margin: 0 8px; /* Adjust margin */
-            height: 200px;
-            background: grey;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .six-card {
-                flex: 0 0 calc(33.3333% - 10px);
-                max-width: calc(33.3333% - 10px);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .six-card {
-                flex: 0 0 calc(50% - 10px);
-                max-width: calc(50% - 10px);
-            }
-        }
-
-        .six-card-slider-container .prev-btn,
-        .six-card-slider-container .next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 8px;
-            cursor: pointer;
-            font-size: 32px;
-        }
-
-        .six-card-slider-container .prev-btn {
-            left: 0;
-        }
-
-        .six-card-slider-container .next-btn {
-            right: 0;
-        }
-
-    </style>
+    
 
     
 
@@ -184,17 +124,17 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="2000">
-                                <img src="assets/img/uv3.png" class="d-block slider-img " alt="...">
+                                <img src="assets/img/cover-2.jpg" class="d-block slider-img " alt="...">
                                 <!-- <div class="carousel-caption d-none d-md-block">
                                     <h5>First slide label</h5>
                                     <p>Some representative placeholder content for the first slide.</p>
                                 </div> -->
                             </div>
                             <div class="carousel-item " data-bs-interval="2000">
-                                <img src="assets/img/uv1.jpg" class="d-block slider-img border" alt="...">
+                                <img src="assets/img/cover-1.jpg" class="d-block slider-img " alt="...">
                             </div>
                             <div class="carousel-item " data-bs-interval="2000">
-                                <img src="assets/img/uv4.jpg" class="d-block slider-img border" alt="...">
+                                <img src="assets/img/cover-2.jpg" class="d-block slider-img " alt="...">
                             </div>
                         </div>
                         <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -208,7 +148,7 @@
                     </div>
 
                     <!-- departments start  -->
-                    <div class="departments-wrap">
+                    <!-- <div class="departments-wrap">
                         <div class="departments">
                             <div class="row g-3 mt-0" style="width: 94%;">
                                 <div class="col-auto">
@@ -284,29 +224,41 @@
 
 
                         </div>
-                    </div>
+                    </div> -->
                     <!-- departments end -->
                 </div>
             </div>
         </section>
         <!-- top-hero end -->
 
-        <section class="partners">
+        <!-- partners start  -->
+        <!-- <section class="partners ">
             <div class="container">
                 <div class="partners-wrap">
 
                     <div class="six-card-slider-container">
                         <div class="six-card-slider-wrapper">
-                            <div class="six-card">Product 1</div>
-                            <div class="six-card">Product 2</div>
-                            <div class="six-card">Product 3</div>
-                            <div class="six-card">Product 4</div>
-                            <div class="six-card">Product 5</div>
-                            <div class="six-card">Product 6</div>
-                            <div class="six-card">Product 7</div>
-                            <div class="six-card">Product 8</div>
-                            <div class="six-card">Product 9</div>
-                            <div class="six-card">Product 10</div>
+                            <div class="six-card text-center">
+                                <img src="assets/img/partners/partner-1.png" class="partner-logo" alt="">
+                            </div>
+                            <div class="six-card text-center">
+                                <img src="assets/img/partners/partner-2.png" class="partner-logo" alt="">
+                            </div>
+                            <div class="six-card text-center">
+                                <img src="assets/img/partners/partner-3.png" class="partner-logo" alt="">
+                            </div>
+                            <div class="six-card text-center">
+                                <img src="assets/img/partners/partner-4.png" class="partner-logo" alt="">
+                            </div>
+                            <div class="six-card text-center">
+                                <img src="assets/img/partners/partner-5.png" class="partner-logo" alt="">
+                            </div>
+                            <div class="six-card text-center">
+                                <img src="assets/img/partners/partner-6.png" class="partner-logo" alt="">
+                            </div>
+                            <div class="six-card text-center">
+                                <img src="assets/img/partners/partner-6.png" class="partner-logo" alt="">
+                            </div>
                         </div>
                         <button class="prev-btn">&#8249;</button>
                         <button class="next-btn">&#8250;</button>
@@ -314,7 +266,108 @@
 
                 </div>
             </div>
+        </section> -->
+
+        <section class="partners ">
+            <div class="container">
+                <div class="partners-wrap row g-4 row-cols-6">
+                    <div class="col text-center">
+                        <img src="assets/img/partners/partner-1.png" class="partner-logo" alt="">
+                    </div>
+                    <div class="col text-center">
+                        <img src="assets/img/partners/partner-2.png" class="partner-logo" alt="">
+                    </div>
+                    <div class="col text-center">
+                        <img src="assets/img/partners/partner-3.png" class="partner-logo" alt="">
+                    </div>
+                    <div class="col text-center">
+                        <img src="assets/img/partners/partner-4.png" class="partner-logo" alt="">
+                    </div>
+                    <div class="col text-center">
+                        <img src="assets/img/partners/partner-5.png" class="partner-logo" alt="">
+                    </div>
+                    <div class="col text-center">
+                        <img src="assets/img/partners/partner-6.png" class="partner-logo" alt="">
+                    </div>
+
+                </div>
+            </div>
         </section>
+
+        <section class="services section-padding">
+            <div class="container">
+                <div class="row g-3 g-md-4 row-cols-1 row-cols-md-3">
+                    <div class="col">
+                        <div class="service-card card ">
+                            <div class="text-center pt-4"><img src="assets/img/icons/offset.png" class="service-icon" alt="..."></div>
+                            <div class="card-body text-center ">
+                                <h5 class="card-title">Offset Printing</h5>
+                                <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <a href="#" class="link">See Details <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="service-card card ">
+                            <div class="text-center pt-4"><img src="assets/img/icons/offset.png" class="service-icon" alt="..."></div>
+                            <div class="card-body text-center ">
+                                <h5 class="card-title">Offset Printing</h5>
+                                <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <a href="#" class="link">See Details <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="service-card card ">
+                            <div class="text-center pt-4"><img src="assets/img/icons/offset.png" class="service-icon" alt="..."></div>
+                            <div class="card-body text-center ">
+                                <h5 class="card-title">Offset Printing</h5>
+                                <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <a href="#" class="link">See Details <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="service-card card ">
+                            <div class="text-center pt-4"><img src="assets/img/icons/offset.png" class="service-icon" alt="..."></div>
+                            <div class="card-body text-center ">
+                                <h5 class="card-title">Offset Printing</h5>
+                                <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <a href="#" class="link">See Details <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="service-card card ">
+                            <div class="text-center pt-4"><img src="assets/img/icons/offset.png" class="service-icon" alt="..."></div>
+                            <div class="card-body text-center ">
+                                <h5 class="card-title">Offset Printing</h5>
+                                <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <a href="#" class="link">See Details <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="service-card card ">
+                            <div class="text-center pt-4"><img src="assets/img/icons/offset.png" class="service-icon" alt="..."></div>
+                            <div class="card-body text-center ">
+                                <h5 class="card-title">Offset Printing</h5>
+                                <p class="card-text my-3">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                                <a href="#" class="link">See Details <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <div style="height: 300px;">
+            sdfsdfdsf
+        </div>
 
         <!-- top university-list start -->
         <section class="university-list section-padding">
