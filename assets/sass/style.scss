@@ -47,7 +47,47 @@
 
 
 
+// about-us 
+.about-us{
+    background-color: $bg-light;
+    .about-wrap{
+        .about-images{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            .thum-left{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 70%;
+                height: 80%;
+                // height: 478px;
+                object-fit: cover;
+            }
+            .thum-right{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 64%;
+                height: 54%;
+                // height: 338px;
+                object-fit: cover;
+            }
+        }
 
+        // about-info
+        .about-info{
+            .about-card{
+                background-color: $bg-white;
+                transition: 0.4s;
+                &:hover{
+                    box-shadow: $shadow-lg-light;
+                    // margin-top: -4px;
+                }
+            }
+        }
+    }
+}
 
 
 

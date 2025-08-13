@@ -150,6 +150,8 @@
 .link{
     color: $secondary;
     font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: $semibold;
     &:hover{text-decoration: underline;}
 }
 
@@ -175,7 +177,7 @@
 }
 
 .section-padding{
-    padding: 2.5rem 0;
+    padding: 4.4rem 0;
 }
 .padding-top{
     padding-top: 6.6rem;
@@ -208,9 +210,10 @@
     }
 }
 .card-title{
-    font-weight: $semibold;
     color: $dark;
-    font-size: .875rem;
+    font-size: 1rem;
+    font-weight: $semibold;
+    margin-bottom: 10px;
 }
 
 
