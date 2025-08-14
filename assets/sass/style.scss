@@ -90,7 +90,12 @@
 }
 
 
-
+.service-counter{
+    background-color: $secondary;
+    .row{
+        padding: 0 5rem;
+    }
+}
 
 
 
