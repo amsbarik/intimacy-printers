@@ -1,0 +1,32 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+
+.project-details{
+    .project-wrap{
+        // padding: 0 154px;
+
+        .cover-img{
+            width: 100%;
+            height: 540px;
+            object-fit: cover;
+        }
+
+        .text-details{
+
+            p{margin-bottom: 1rem;}
+
+            .qoute{
+                background-color: $bg-light;
+                padding: 1rem 1.5rem;
+                font-style: italic;
+                i{
+                    color: $secondary;
+                    font-size: 1.6rem;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,72 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+
+    .project-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+    .card-title, .card-text{color: white}
+
+    .link{
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -42%);
+        z-index: 10;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        color: $white;
+    }
+
+    /* Dark overlay layer */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 1;
+    }
+
+    .overlay {
+        position: absolute;
+        bottom: -100%; /* hidden below card */
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background: $secondary;
+        // color: #fff;
+        text-align: center;
+        transition: bottom 0.4s ease;
+        z-index: 2;
+
+        // a {
+        //     color: #fff;
+        //     font-weight: bold;
+        //     text-decoration: none;
+        // }
+    }
+
+    &:hover {
+        // .project-img {
+        //     transform: scale(1.01);
+        // }
+        &::before {
+            opacity: 1;
+        }
+        .overlay {
+            bottom: 0; /* slides up */
+        }
+        .link {
+            opacity: 1;
+        }
+    }
+}

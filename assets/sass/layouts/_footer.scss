@@ -8,7 +8,7 @@
 
     .footer-card{
         .logo{
-            width: 8rem;
+            width: 14rem;
             height: auto;
         }
         .sub-heading{
@@ -18,10 +18,11 @@
             margin-top: 1rem;
             .link{
                 color: lighten($color: $primary, $amount: 30);
+                text-transform: capitalize;
                 &:hover{
-                    color: $secondary;
+                    color: $white;
                 }
-                i{color: $secondary;}
+                i{color: lighten($color: $secondary, $amount: 20);}
             }
         }
 
@@ -32,7 +33,7 @@
         .form-control{
             background-color: lighten($color: $primary, $amount: 7);
             border: 1px solid $primary;
-            height: 2.6rem;
+            height: 100%;
             color: $primary;
             &:focus{
                 background-color: lighten($color: $primary, $amount: 14);
@@ -42,7 +43,7 @@
                 opacity: .5;
             }
         }
-        .btn{height: 2.6rem;}
+        // .btn{height: 2.6rem;}
     }
 
     .copy-right{
@@ -51,7 +52,7 @@
         font-weight: 400;
     }
     .brand-name{
-        color: $secondary;
+        color: $white;
         font-weight: 500;
     }
 }
@@ -63,10 +64,10 @@
             margin-left: 0;
         }
         a{
-            color: $secondary;
+            color: lighten($color: $primary, $amount: 16);
             transition: .4s;
             &:hover{
-                color: lighten($color: $primary, $amount: 16);
+                color: $white;
             }
         }
     }

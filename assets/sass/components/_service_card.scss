@@ -2,33 +2,59 @@
 @use '../partials/variables' as *;
 
 
+@keyframes waveLeftToRight {
+  0% { background-position: 0% 0; }
+  50% { background-position: 100% 0; }
+  100% { background-position: 0% 0; }
+}
 
-.service-card{
+@keyframes waveRightToLeft {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.service-card {
     height: 100%;
-    box-shadow: $shadow-lg;
+    padding: 1.5rem;
+    padding-top: 2rem;
     transition: .4s;
-    &:hover{
-        box-shadow: none;
+    border: 1px solid $white;
+    position: relative;
+    background: linear-gradient(120deg, lighten($primary, 40%), lighten($secondary, 40%), lighten($primary, 40%));
+    background-size: 200% 100%;
+    animation: waveLeftToRight 6s ease-in-out infinite; // default direction
+
+    &:hover {
         border: 1px solid $secondary;
-        .card-title{
+        animation: none;
+        .card-title {
             color: $secondary;
         }
     }
-    
-    .service-icon{
-        width: 5rem;
+
+    .service-icon {
         width: 5rem;
         object-fit: cover;
     }
 
-    .card-title{
+    .card-title {
         font-size: 1.1rem;
-        margin-top: .5rem;
+        margin-top: 1.2rem;
         transition: .4s;
     }
 
-    .link:hover{
+    .link{
+        font-size: 0.875rem;
+        text-transform: capitalize;
+    }
+
+    .link:hover {
         transition: .4s;
-        i{color: $primary}
+        i { color: $primary; }
     }
 }
+
+// /* Alternate cards get reverse wave */
+// .row .service-card:nth-child(even) {
+//     animation: waveRightToLeft 6s ease-in-out infinite;
+// }
