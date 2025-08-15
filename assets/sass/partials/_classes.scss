@@ -7,7 +7,8 @@
     color: $white;
     font-size: .875rem;
     font-weight: $medium;
-    padding: 12px 24px 10px 24px;
+    padding: 12px 24px ;
+    border-radius: 0;
     border: none;
     position: relative; // Required for the pseudo-element positioning
     overflow: hidden; // Hide the overflow for the effect
@@ -16,6 +17,52 @@
     text-transform: uppercase;
     // line-height: auto;
 }
+
+.btn-primary {
+    background: linear-gradient(90deg, $secondary, lighten($secondary, 12));
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%; // start completely to the left
+        width: 100%;
+        height: 100%;
+        
+        background: linear-gradient(90deg, $primary, lighten($primary, 12));
+        z-index: -1;
+        transition: left 0.6s ease; // slide effect
+    }
+
+    &:hover {
+        color: $white;
+        &::before {
+            left: 0; // slide in from left to fully cover
+        }
+    }
+}
+
+
+// .btn-primary {
+//     background: linear-gradient(90deg, $primary, lighten($primary, 16));
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         top: 0;
+//         left: 50%;
+//         width: 0;
+//         height: 100%;
+//         background: linear-gradient(90deg, $secondary, lighten($secondary, 16));
+//         z-index: -1;
+//         transition: width 0.6s ease, left 0.6s ease; // Animation for box-out effect
+//     }
+//     &:hover {
+//         color: $white;
+//         &::before {
+//             width: 200%; // Double the width to ensure full coverage
+//             left: -50%; // Move left to start the expansion from center
+//         }
+//     }
+// }
 
 .btn-sm{
     font-size: .84rem;
@@ -27,28 +74,6 @@
     font-size: 1rem;
     font-weight: 500;
     color: $dark;
-}
-
-.btn-primary {
-    background: linear-gradient(90deg, $primary, lighten($primary, 16));
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 0;
-        height: 100%;
-        background: linear-gradient(90deg, $secondary, lighten($secondary, 16));
-        z-index: -1;
-        transition: width 0.6s ease, left 0.6s ease; // Animation for box-out effect
-    }
-    &:hover {
-        color: $white;
-        &::before {
-            width: 200%; // Double the width to ensure full coverage
-            left: -50%; // Move left to start the expansion from center
-        }
-    }
 }
 
 .btn-dark{
@@ -163,15 +188,16 @@
 .heading{
     font-weight: $bold;
     color: $primary;
-    font-size: 2.6rem;
+    font-size: 36px;
     // line-height: 6.25rem;
 }
 
 .sub-heading{
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: $dark;
     line-height: 1.375rem;
     font-weight: $semibold;
+    margin-bottom: 16px;
     // text-transform: uppercase;
     @extend .text-gradient;
 }
@@ -179,8 +205,8 @@
 .section-padding{
     padding: 4.4rem 0;
 }
-.padding-top{
-    padding-top: 6.6rem;
+.margin-top{
+    margin-top: 108px;
 }
 .section-heading{
     font-weight: $semibold;
@@ -213,7 +239,7 @@
     color: $dark;
     font-size: 1rem;
     font-weight: $semibold;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
 }
 
 

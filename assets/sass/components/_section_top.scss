@@ -1,0 +1,37 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+
+.section-top{
+    .heading {
+        position: relative; // make it the positioning reference
+        display: inline-block; // so the lines match the text width
+        padding-bottom: 8px; // space for the lines
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 5px;               // slightly above the bottom line
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background-color: $secondary;    // set line color
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;                 // very bottom
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 1px;
+            background-color: $secondary;    // set line color
+        }
+    }
+    .text{
+        padding: 0 280px;
+    }
+}

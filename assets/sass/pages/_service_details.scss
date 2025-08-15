@@ -1,0 +1,33 @@
+@use '../base/index' as *;
+@use '../partials/variables' as *;
+
+
+
+.service-cover{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.service-feature{
+    
+    .feature-card{
+        background-color: $bg-light;
+        padding: 1.5rem;
+        transition: 0.4s ease;
+        // border: 1px solid $secondary;
+        .success-key{
+            font-size: 3.4rem;
+            font-weight: 300;
+            color: $secondary;
+        }
+
+        &:hover{
+            box-shadow: $shadow-lg;
+            background: linear-gradient(90deg, $secondary, lighten($secondary, 12));
+            .success-key, .card-title, .card-text{
+                color: $white;
+            }
+
+        }
+    }
+}

@@ -17,7 +17,7 @@
         padding: 1.5rem;
         i{
             color: $secondary;
-            font-size: 2rem;
+            font-size: .875rem;
         }
     }
     .card-footer{
@@ -33,6 +33,10 @@
         .card-title{margin-top: 2px;}
         .card-text{
             font-size: .75rem;
+        }
+        i{
+            color: $secondary;
+            font-size: 2.8rem;
         }
         
     }

@@ -98,7 +98,44 @@
 }
 
 
+// our works 
+.our-works {
 
+    .nav{
+        // background-color: $bg-light;
+        .nav-item{
+            .nav-link{
+                color: $dark;
+                font-weight: 600;
+            }
+            .nav-link.active{
+                background-color: $secondary;
+                color: white;
+            }
+        }
+    }
+
+
+
+
+
+
+    .col {
+        overflow: hidden;
+        .work-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.4s ease; // applies for hover in & out
+        }
+
+        &:hover {
+            .work-img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
 
 
 
