@@ -1,0 +1,221 @@
+<!-- ------------- Partners slider (final responsive) ------------- -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Partners Slider - Final Responsive</title>
+
+<style>
+  :root{
+    --gap: 1rem;            /* spacing between logos */
+    --auto-speed: 0.035;    /* px per ms (≈35px/sec) - adjust autoplay speed */
+    --min-momentum: 0.001;  /* minimum velocity (px/ms) to consider */
+  }
+
+  /* container */
+  .partners {
+    padding: 1.25rem 0;
+  }
+
+  .partners-slider {
+    overflow: hidden;
+    width: 100%;
+    user-select: none;
+  }
+
+  /* the moving track */
+  .partners-track {
+    display: flex;
+    gap: var(--gap);
+    align-items: center;
+    will-change: transform;
+    touch-action: pan-y;
+    transform: translate3d(0,0,0);
+  }
+
+  /* partner item - default (small screens: 3 logos) */
+  .partner-item {
+    flex: 0 0 calc((100% - (2 * var(--gap))) / 3);
+    box-sizing: border-box;
+  }
+
+  /* md: 4 logos */
+  @media (min-width: 768px) {
+    .partner-item {
+      flex: 0 0 calc((100% - (3 * var(--gap))) / 4);
+    }
+  }
+
+  /* lg: 6 logos */
+  @media (min-width: 992px) {
+    .partner-item {
+      flex: 0 0 calc((100% - (5 * var(--gap))) / 6);
+    }
+  }
+
+  .partner-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+    -webkit-user-drag: none;
+  }
+
+  /* cursor feedback */
+  .partners-slider { cursor: grab; }
+  .partners-slider.dragging { cursor: grabbing; }
+
+  /* optional: scale on hover */
+  .partner-item:hover .partner-logo { transform: scale(1.05); transition: transform .18s ease; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partners-track { transition: none; animation: none !important; }
+  }
+</style>
+
+</head>
+<body>
+
+<section class="partners">
+  <div class="container">
+    <div class="partners-slider" id="partnersSlider">
+      <div class="partners-track" id="partnersTrack">
+        <!-- logos -->
+        <div class="partner-item"><img class="partner-logo" src="assets/img/partners/partner-1.png" alt="p1"></div>
+        <div class="partner-item"><img class="partner-logo" src="assets/img/partners/partner-2.png" alt="p2"></div>
+        <div class="partner-item"><img class="partner-logo" src="assets/img/partners/partner-3.png" alt="p3"></div>
+        <div class="partner-item"><img class="partner-logo" src="assets/img/partners/partner-4.png" alt="p4"></div>
+        <div class="partner-item"><img class="partner-logo" src="assets/img/partners/partner-5.png" alt="p5"></div>
+        <div class="partner-item"><img class="partner-logo" src="assets/img/partners/partner-6.png" alt="p6"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* Final partners slider script (unchanged) */
+(function () {
+  const track = document.getElementById('partnersTrack');
+  const slider = document.getElementById('partnersSlider');
+  if (!track || !slider) return;
+
+  function duplicateOnce() {
+    if (track.dataset.duplicated === 'true') return;
+    track.innerHTML += track.innerHTML;
+    track.dataset.duplicated = 'true';
+  }
+
+  function imagesLoaded(parent, cb) {
+    const imgs = parent.querySelectorAll('img');
+    let total = imgs.length, loaded = 0;
+    if (!total) return cb();
+    imgs.forEach(img => {
+      if (img.complete && img.naturalWidth !== 0) {
+        loaded++;
+        if (loaded === total) cb();
+      } else {
+        img.addEventListener('load', () => { loaded++; if (loaded === total) cb(); });
+        img.addEventListener('error', () => { loaded++; if (loaded === total) cb(); });
+      }
+    });
+  }
+
+  let pos = 0, trackWidth = 0, lastTime = 0;
+  let isDragging = false, pointerId = null, startX = 0, startPos = 0;
+  let momentum = 0, hoverPaused = false;
+
+  const style = getComputedStyle(document.documentElement);
+  const AUTO_SPEED = parseFloat(style.getPropertyValue('--auto-speed')) || 0.035;
+
+  function normalizePos() {
+    if (!trackWidth) return;
+    while (pos <= -trackWidth) pos += trackWidth;
+    while (pos > 0) pos -= trackWidth;
+  }
+
+  function updateTransform() {
+    track.style.transform = `translate3d(${pos}px,0,0)`;
+  }
+
+  function rafLoop(now) {
+    if (!lastTime) lastTime = now;
+    const dt = Math.min(40, now - lastTime);
+    lastTime = now;
+
+    if (!isDragging && !hoverPaused) {
+      if (Math.abs(momentum) > parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--min-momentum') || 0.001)) {
+        pos += momentum * dt;
+        const decayPerMs = 0.9985;
+        momentum *= Math.pow(decayPerMs, dt);
+        if (Math.abs(momentum) < 0.0005) momentum = 0;
+      } else {
+        pos -= AUTO_SPEED * dt;
+      }
+    }
+
+    normalizePos();
+    updateTransform();
+    requestAnimationFrame(rafLoop);
+  }
+
+  function onPointerDown(e) {
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    try { e.target.setPointerCapture(e.pointerId); } catch (err) {}
+    isDragging = true; pointerId = e.pointerId;
+    startX = e.clientX; startPos = pos; momentum = 0;
+    slider.classList.add('dragging'); e.preventDefault();
+  }
+
+  function onPointerMove(e) {
+    if (!isDragging || e.pointerId !== pointerId) return;
+    const dx = e.clientX - startX; pos = startPos + dx;
+    normalizePos(); updateTransform();
+    const now = performance.now();
+    if (!onPointerMove._lastTime) { onPointerMove._lastTime = now; onPointerMove._lastX = e.clientX; return; }
+    const dt = now - onPointerMove._lastTime;
+    if (dt > 0) {
+      const vx = (e.clientX - onPointerMove._lastX) / dt;
+      momentum = vx * 0.9 + momentum * 0.1;
+      onPointerMove._lastTime = now; onPointerMove._lastX = e.clientX;
+    }
+  }
+
+  function endDrag(e) {
+    if (!isDragging) return;
+    try { e.target.releasePointerCapture(e.pointerId); } catch (err) {}
+    isDragging = false; pointerId = null; slider.classList.remove('dragging');
+    if (Math.abs(momentum) < 0.0005) momentum = 0;
+  }
+
+  slider.addEventListener('mouseenter', () => { hoverPaused = true; });
+  slider.addEventListener('mouseleave', () => { hoverPaused = false; });
+  slider.addEventListener('pointerdown', onPointerDown, { passive: false });
+  window.addEventListener('pointermove', onPointerMove, { passive: false });
+  window.addEventListener('pointerup', endDrag, { passive: true });
+  window.addEventListener('pointercancel', endDrag, { passive: true });
+
+  function recompute() {
+    trackWidth = track.scrollWidth / 2 || 0;
+    normalizePos(); updateTransform();
+  }
+  window.addEventListener('resize', () => { setTimeout(recompute, 50); });
+
+  function initOnce() {
+    duplicateOnce();
+    imagesLoaded(track, () => {
+      recompute(); normalizePos(); lastTime = 0;
+      requestAnimationFrame(rafLoop);
+    });
+  }
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initOnce();
+  } else {
+    window.addEventListener('DOMContentLoaded', initOnce);
+  }
+})();
+</script>
+
+</body>
+</html>

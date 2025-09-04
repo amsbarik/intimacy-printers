@@ -39,11 +39,85 @@
     
 }
 
-.partners{
+
+
+// partners 
+.partners {
     background: $bg-light;
-    padding: 4.375rem 0;
+    // padding: 4.375rem 0 1.25rem;
+
+    
+
 }
 
+:root{
+        --gap: 1rem;            /* spacing between logos */
+        --auto-speed: 0.035;    /* px per ms (≈35px/sec) - adjust autoplay speed */
+        --min-momentum: 0.001;  /* minimum velocity (px/ms) to consider */
+    }
+
+    /* container */
+    .partners {
+        padding: 1.25rem 0;
+    }
+
+
+    .partners-slider {
+        overflow: hidden;
+        width: 100%;
+        user-select: none;
+    }
+
+    /* the moving track */
+    .partners-track {
+        display: flex;
+        gap: var(--gap);
+        align-items: center;
+        will-change: transform;
+        touch-action: pan-y;
+        transform: translate3d(0,0,0);
+    }
+
+    /* partner item - default (small screens: 3 logos) */
+    .partner-item {
+        flex: 0 0 calc((100% - (2 * var(--gap))) / 3);
+        box-sizing: border-box;
+    }
+
+    /* md: 4 logos */
+    @media (min-width: 768px) {
+        .partner-item {
+        flex: 0 0 calc((100% - (3 * var(--gap))) / 4);
+        }
+    }
+
+    /* lg: 6 logos */
+    @media (min-width: 992px) {
+        .partner-item {
+        flex: 0 0 calc((100% - (5 * var(--gap))) / 6);
+        }
+    }
+
+    .partner-logo {
+        width: 100%;
+        height: auto;
+        display: block;
+        pointer-events: none;
+        -webkit-user-drag: none;
+    }
+
+    /* cursor feedback */
+    .partners-slider { cursor: grab; }
+    .partners-slider.dragging { cursor: grabbing; }
+
+    /* optional: scale on hover */
+    .partner-item:hover .partner-logo { transform: scale(1.05); transition: transform .18s ease; }
+
+    @media (prefers-reduced-motion: reduce) {
+        .partners-track { transition: none; animation: none !important; }
+    }
+
+    
 
 
 
